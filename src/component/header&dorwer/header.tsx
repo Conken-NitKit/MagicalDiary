@@ -2,13 +2,12 @@ import React from 'react'
 import { AppBar, Button, Toolbar } from '@material-ui/core'
 import styled from 'styled-components'
 import Humberger from './Humberger'
-import { withStyles } from '@material-ui/styles'
 
 const HeaderBar = styled(AppBar)`
   height: 80px;
 `
 const HeaderTool = styled(Toolbar)`
-  background-color: white;
+  background-color: #ebf2f9;
   height: 80px;
 `
 const TitleButton = styled.button`
