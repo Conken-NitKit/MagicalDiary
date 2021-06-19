@@ -6,7 +6,7 @@ const Body = styled.body`
   top: 16.18px;
   height: 165.8px;
   width: 100px;
-  margin-top: 100px;
+  margin-top: 0px;
   background: #333333;
 `
 
@@ -86,7 +86,7 @@ const Point = styled.div`
 
 function Zone() {
   return (
-    <html>
+    <div>
       <Body>
         <Outline>
           <Down>
@@ -104,7 +104,7 @@ function Zone() {
           <Down_surface />
         </Outline>
       </Body>
-    </html>
+    </div>
   )
 }
 

@@ -11,7 +11,7 @@ const Body = styled.body`
   top: 0px;
   left: 0px;
   background-color: rgba(121, 167, 217, 0.15);
-  height: 100%;
+  min-height: 100vh;
   width: 100vw;
   margin-left: 0px;
 `
@@ -48,12 +48,18 @@ const Container = styled.div`
   flex-flow: row wrap-reverse;
 `
 
+const Space = styled.div`
+  height: 130px;
+  width: 100vw;
+`
+
 const MyPage = () => {
   return (
     <Body>
       <UserName>ユーザー名</UserName>
       <Since>2020年３月から社畜</Since>
       <AddButton style={{ fontSize: 45 }} />
+      <Space></Space>
       <Container>
         <MonsterEnegy />
         <Zone />

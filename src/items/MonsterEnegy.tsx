@@ -6,7 +6,7 @@ const Body = styled.body`
   top: 16.18px;
   height: 165.8px;
   width: 100px;
-  margin-top: 100px;
+  margin-top: 0px;
   background: #333333;
 `
 
@@ -80,7 +80,7 @@ const Monster_line = styled.div`
 
 function MonsterEnegy() {
   return (
-    <html>
+    <div>
       <Body>
         <Outline>
           <Down>
@@ -101,7 +101,7 @@ function MonsterEnegy() {
           <Down_surface />
         </Outline>
       </Body>
-    </html>
+    </div>
   )
 }
 

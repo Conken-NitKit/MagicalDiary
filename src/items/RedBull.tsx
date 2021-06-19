@@ -7,7 +7,7 @@ const Body = styled.body`
   top: 16.18px;
   height: 175px;
   width: 100px;
-  margin-top: 100px;
+  margin-top: 0px;
   background: #4977bc;
 `
 
@@ -110,7 +110,7 @@ const Text = styled.div`
 
 function RedBull() {
   return (
-    <html>
+    <div>
       <Body>
         <Outline>
           <Top>
@@ -127,7 +127,7 @@ function RedBull() {
           <Down_surface />
         </Outline>
       </Body>
-    </html>
+    </div>
   )
 }
 
