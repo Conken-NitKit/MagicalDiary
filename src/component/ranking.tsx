@@ -43,9 +43,19 @@ const Card = styled.li`
 
   height: 10%;
   width: 100%;
+
+  transition: 0.7s;
+
+  &:hover {
+    background: rgba(121, 167, 217, 0.1);
+  }
 `
 
 const Rank = styled.p`
+  display: flex;
+
+  justify-content: center;
+
   margin: 0;
   width: 15%;
 
