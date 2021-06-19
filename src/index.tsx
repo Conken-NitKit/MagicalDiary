@@ -2,9 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter, Route } from 'react-router-dom'
-import RankingPage from 'component/ranking'
-import Login from 'component/login'
-import MyPage from 'component/my-page'
+import RankingPage from 'components/ranking'
+import Login from 'components/login'
+import MyPage from 'components/my-page'
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import rankingData from '../documents/rankingDummyData.json'
 import Header from './header&dorwer/header'
+
+import { ModalContext } from 'contexts/modalContext'
 
 const Container = styled.div`
   height: 100vh;
@@ -77,9 +80,19 @@ const Name = styled(Link)<{ rank: number }>`
 `
 
 export const RankingPage = () => {
+  const [isPostModalOpen, setIsPostModalOpen] = useState(false)
+
   return (
     <Container>
-      <Header />
+      <ModalContext.Provider
+        value={{
+          isModalOpen: isPostModalOpen,
+          setIsModalOpen: setIsPostModalOpen,
+        }}
+      >
+        <Header />
+      </ModalContext.Provider>
+
       <Body>
         <CardContainer>
           {rankingData.map(({ name }, index) => (
