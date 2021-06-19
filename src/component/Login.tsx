@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
 
+declare global {
+  interface Window {
+    gapi: any
+  }
+}
+
 class Login extends Component {
   state = { isSignedIn: null }
 
