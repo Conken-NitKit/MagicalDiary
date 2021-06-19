@@ -1,12 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
 import reportWebVitals from './reportWebVitals'
+import { BrowserRouter, Route } from 'react-router-dom'
+import RankingPage from 'component/ranking'
+import Login from 'component/login'
+import MyPage from 'component/my-page'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <>
+        <Route exact path="/" component={RankingPage} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/mypage" component={MyPage} />
+      </>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root'),
 )
