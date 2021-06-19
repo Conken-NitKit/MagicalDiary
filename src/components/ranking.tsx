@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import rankingData from '../documents/rankingDummyData.json'
-import Header from './header&dorwer/Header'
+import Header from './header&dorwer/header'
 import Cookies from 'js-cookie'
 
 import { ModalContext } from '../contexts/ModalContext'
