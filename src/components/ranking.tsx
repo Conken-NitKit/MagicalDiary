@@ -88,30 +88,30 @@ export const RankingPage = () => {
   const [isPostModalOpen, setIsPostModalOpen] = useState(false)
 
   return (
-    <Container isPostModalOpen={isPostModalOpen}>
-      <ModalContext.Provider
-        value={{
-          isModalOpen: isPostModalOpen,
-          setIsModalOpen: setIsPostModalOpen,
-        }}
-      >
+    <ModalContext.Provider
+      value={{
+        isModalOpen: isPostModalOpen,
+        setIsModalOpen: setIsPostModalOpen,
+      }}
+    >
+      <Container isPostModalOpen={isPostModalOpen}>
         <Header />
-      </ModalContext.Provider>
 
-      <Body>
-        <CardContainer>
-          {rankingData.map(({ name }, index) => (
-            <Card>
-              <Rank>{index + 1}位</Rank>
-              <Name to="/" rank={index}>
-                {name}
-              </Name>
-            </Card>
-          ))}
-        </CardContainer>
-      </Body>
-      {isPostModalOpen && <PostModal />}
-    </Container>
+        <Body>
+          <CardContainer>
+            {rankingData.map(({ name }, index) => (
+              <Card>
+                <Rank>{index + 1}位</Rank>
+                <Name to="/" rank={index}>
+                  {name}
+                </Name>
+              </Card>
+            ))}
+          </CardContainer>
+        </Body>
+        {isPostModalOpen && <PostModal />}
+      </Container>
+    </ModalContext.Provider>
   )
 }
 

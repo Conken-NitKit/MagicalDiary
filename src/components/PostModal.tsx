@@ -1,5 +1,8 @@
+import { useContext } from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
+
+import { ModalContext } from '../contexts/ModalContext'
 
 const Container = styled.div`
   display: flex;
@@ -56,9 +59,19 @@ const AddButton = styled.button`
   height: 50%;
   width: 33%;
 
+  font: 900 1.4vw 'M PLUS Rounded 1c';
+
+  color: white;
+
   outline: none;
 
   background: rgba(26, 42, 124, 0.5);
+
+  transition: 0.7s;
+
+  &:hover {
+    background: rgba(26, 42, 124, 0.3);
+  }
 `
 
 const Description = styled.a`
@@ -88,19 +101,38 @@ const ConfirmationButtonSpace = styled(AddButtonSpace)`
 
 export const PostModal = () => {
   const el = document.getElementById('modal')
+
+  const { setIsModalOpen } = useContext(ModalContext)
+
   return ReactDOM.createPortal(
     <Container>
       <Modal>
         <AddButtonSpace>
-          <AddButton></AddButton>
+          <AddButton>ファイルを選択</AddButton>
           <Description>hrrn.png</Description>
-          <Cancel></Cancel>
+          <Cancel
+            onClick={() => {
+              setIsModalOpen(false)
+            }}
+          ></Cancel>
         </AddButtonSpace>
-        <Preview></Preview>
+        <Preview src="" /*投稿した写真*/></Preview>
         <Description>あなたが飲んだのはhrrnですか？</Description>
         <ConfirmationButtonSpace>
-          <AddButton></AddButton>
-          <AddButton></AddButton>
+          <AddButton
+            onClick={() => {
+              setIsModalOpen(false)
+            }}
+          >
+            はい
+          </AddButton>
+          <AddButton
+            onClick={() => {
+              setIsModalOpen(false)
+            }}
+          >
+            いいえ
+          </AddButton>
         </ConfirmationButtonSpace>
       </Modal>
     </Container>,
