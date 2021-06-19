@@ -1,7 +1,12 @@
 import React from 'react'
+import Header from './header&dorwer/header'
 
 const RankingPage = () => {
-  return <div>ranking</div>
+  return (
+    <>
+      <Header />
+    </>
+  )
 }
 
 export default RankingPage
