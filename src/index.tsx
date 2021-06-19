@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter, Route } from 'react-router-dom'
 import RankingPage from 'component/ranking'
-import Login from 'component/Login'
+import GoogleAuthComponent from 'component/GoogleAuthComponent'
 import MyPage from 'component/my-page'
 
 ReactDOM.render(
@@ -11,7 +11,7 @@ ReactDOM.render(
     <BrowserRouter>
       <>
         <Route exact path="/" component={RankingPage} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/login" component={GoogleAuthComponent} />
         <Route exact path="/mypage" component={MyPage} />
       </>
     </BrowserRouter>
