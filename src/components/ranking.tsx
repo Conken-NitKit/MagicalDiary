@@ -8,8 +8,8 @@ import { ModalContext } from '../contexts/ModalContext'
 import PostModal from './PostModal'
 
 const Container = styled.div`
-  height: 100%;
-  width: 100%;
+  min-height: 100vh;
+  width: 100vw;
 
   background: rgba(121, 167, 217, 0.15);
 `
@@ -17,24 +17,24 @@ const Container = styled.div`
 const Body = styled.body`
   display: flex;
 
-  margin: 0;
-
   justify-content: center;
   align-items: center;
 
-  height: 100%;
+  margin: 0;
+
   width: 100%;
 `
 
 const CardContainer = styled.ul`
-  margin: 0;
+  position: relative;
 
-  padding: 0;
+  bottom: 0;
 
-  height: 80%;
-  width: 25%;
+  margin: 80px 0 0 0;
 
-  overflow: scroll;
+  padding: 0 37.5%;
+
+  width: 100%;
 
   list-style: none;
 `
