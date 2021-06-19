@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import rankingData from '../documents/rankingDummyData.json'
+import Header from './header&dorwer/header'
 
 const Container = styled.div`
   height: 100vh;
@@ -78,6 +79,7 @@ const Name = styled(Link)<{ rank: number }>`
 export const RankingPage = () => {
   return (
     <Container>
+      <Header />
       <Body>
         <CardContainer>
           {rankingData.map(({ name }, index) => (
