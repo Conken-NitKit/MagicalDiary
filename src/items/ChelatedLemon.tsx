@@ -1,14 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const Div = styled.div`
+  margin-left: calc(12px + 1%);
+  margin-right: calc(12px + 1%);
+  margin-top: 20px;
+`
+
 const Cap = styled.div`
   position: relative;
   display: flex;
-  top: 18px;
+  top: 5px;
   right: 0px;
-  margin-left: 25px;
-  height: 25px;
-  width: 50px;
+  margin-left: 12px;
+  height: 10px;
+  width: 20px;
   background-color: #fdd000;
   z-index: 2;
   border-radius: 5px;
@@ -17,46 +23,31 @@ const Cap = styled.div`
 const TopSurface = styled.div`
   position: relative;
   display: flex;
-  top: -7.5px;
+  top: -20.5px;
   height: 25px;
-  width: 100px;
+  width: 44px;
+  top: 0px;
   background-color: #198b86;
   border-radius: 100px;
-`
-
-const TopBox = styled.div`
-  position: relative;
-  display: flex;
-  top: 25px;
-  height: 20px;
-  width: 100px;
-  background-color: #198b86;
 `
 
 const SecondBox = styled.div`
   position: relative;
   display: flex;
-  height: 90px;
-  width: 98px;
+  top: -10px;
+  height: 40px;
+  width: 42px;
   background-color: white;
   border: solid 0.1px brown;
-`
-
-const ThirdBox = styled.div`
-  position: relative;
-  display: flex;
-  top: -25px;
-  height: 12.5px;
-  width: 100px;
-  background-color: #198b86;
+  z-index: 2;
 `
 
 const ButtomSurface = styled.div`
   position: relative;
   display: flex;
-  top: 0px;
-  height: 25px;
-  width: 100px;
+  top: -20px;
+  height: 20px;
+  width: 44px;
   background-color: #198b86;
   border-radius: 100px;
 `
@@ -64,10 +55,10 @@ const ButtomSurface = styled.div`
 const CircleLemon = styled.div`
   position: relative;
   display: flex;
-  top: 35px;
-  left: 40px;
-  height: 43px;
-  width: 44px;
+  top: 15px;
+  left: 15px;
+  height: 20px;
+  width: 20px;
   background: #fdd000;
   border-radius: 100px;
 `
@@ -76,11 +67,11 @@ const TopLemon = styled.div`
   position: relative;
   display: flex;
   top: 0px;
-  right: 5px;
+  left: 7px;
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 30px 20px 0;
+  border-width: 0 7px 7px 0;
   border-radius: 4px;
   border-color: transparent #fdd000 transparent transparent;
 `
@@ -93,41 +84,23 @@ const ButtomLemon = styled.div`
   height: 0;
   border-radius: 4px;
   border-style: solid;
-  border-width: 30px 0 0 20px;
+  border-width: 7px 0 0 7px;
   border-color: transparent transparent transparent #fdd000;
-`
-
-const Text = styled.p`
-  position: relative;
-  display: flex;
-  top: 0px;
-  margin-top: 10px;
-  margin-left: 5px;
-  left: -40px;
-  font-size: 6px;
-  font-weight: 300;
 `
 
 function MonsterEnegy() {
   return (
-    <div>
+    <Div>
       <Cap />
-      <TopBox />
       <TopSurface />
       <SecondBox>
         <CircleLemon>
           <ButtomLemon />
           <TopLemon />
         </CircleLemon>
-        <Text>
-          キレート
-          <br />
-          レモン
-        </Text>
       </SecondBox>
       <ButtomSurface />
-      <ThirdBox />
-    </div>
+    </Div>
   )
 }
 
