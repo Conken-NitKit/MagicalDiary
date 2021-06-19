@@ -1,3 +1,4 @@
+import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -14,7 +15,8 @@ const Container = styled.div`
 `
 
 export const PostModal = () => {
-  return <Container></Container>
+  const el = document.getElementById('modal')
+  return ReactDOM.createPortal(<Container></Container>, el!)
 }
 
 export default PostModal
