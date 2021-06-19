@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import rankingData from '../documents/rankingDummyData.json'
 import Header from './header&dorwer/header'
+import Cookies from 'js-cookie'
 
 const Container = styled.div`
   height: 100vh;
@@ -76,11 +77,19 @@ const Name = styled(Link)<{ rank: number }>`
       : 'none'};
 `
 
+console.log(process.env.REACT_APP_GOOGLE_CLIENT_ID)
+
 export const RankingPage = () => {
+  const test = () => {
+    const data = Cookies.get('authToken')
+    console.log(data)
+  }
+
   return (
     <Container>
       <Header />
       <Body>
+        <button onClick={test}>hogehoge</button>
         <CardContainer>
           {rankingData.map(({ name }, index) => (
             <Card>
