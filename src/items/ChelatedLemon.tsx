@@ -5,7 +5,8 @@ const Cap = styled.div`
   position: relative;
   display: flex;
   top: 18px;
-  left: 25px;
+  right: 0px;
+  margin-left: 25px;
   height: 25px;
   width: 50px;
   background-color: #fdd000;
@@ -96,7 +97,7 @@ const ButtomLemon = styled.div`
   border-color: transparent transparent transparent #fdd000;
 `
 
-const Text = styled.div`
+const Text = styled.p`
   position: relative;
   display: flex;
   top: 0px;
@@ -109,7 +110,7 @@ const Text = styled.div`
 
 function MonsterEnegy() {
   return (
-    <html>
+    <div>
       <Cap />
       <TopBox />
       <TopSurface />
@@ -126,7 +127,7 @@ function MonsterEnegy() {
       </SecondBox>
       <ButtomSurface />
       <ThirdBox />
-    </html>
+    </div>
   )
 }
 

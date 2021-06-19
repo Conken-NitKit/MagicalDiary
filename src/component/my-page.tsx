@@ -11,7 +11,7 @@ const Body = styled.body`
   top: 0px;
   left: 0px;
   background-color: rgba(121, 167, 217, 0.15);
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   margin-left: 0px;
 `
@@ -38,9 +38,15 @@ const Since = styled.p`
   color: #555555;
 `
 
-// const Container = styled.div`
-//   display: flex;
-// `
+const Container = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  align-content: space-around;
+
+  align-self: flex-end;
+  flex-flow: row wrap-reverse;
+`
 
 const MyPage = () => {
   return (
@@ -48,9 +54,20 @@ const MyPage = () => {
       <UserName>ユーザー名</UserName>
       <Since>2020年３月から社畜</Since>
       <AddButton style={{ fontSize: 45 }} />
-      {/* <Container>
-
-      </Container> */}
+      <Container>
+        <MonsterEnegy />
+        <Zone />
+        <CheletedLemon />
+        <Redbull />
+        <MonsterEnegy />
+        <Zone />
+        <CheletedLemon />
+        <Redbull />
+        <MonsterEnegy />
+        <Zone />
+        <CheletedLemon />
+        <Redbull />
+      </Container>
     </Body>
   )
 }
