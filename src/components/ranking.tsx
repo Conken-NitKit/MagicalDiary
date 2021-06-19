@@ -7,9 +7,11 @@ import Header from './header&dorwer/Header'
 import { ModalContext } from '../contexts/ModalContext'
 import PostModal from './PostModal'
 
-const Container = styled.div`
-  min-height: 100vh;
+const Container = styled.div<{ isPostModalOpen: boolean }>`
+  height: 100vh;
   width: 100vw;
+
+  overflow: ${(props) => (props.isPostModalOpen ? 'hidden' : 'scroll')};
 
   background: rgba(121, 167, 217, 0.15);
 `
@@ -86,7 +88,7 @@ export const RankingPage = () => {
   const [isPostModalOpen, setIsPostModalOpen] = useState(false)
 
   return (
-    <Container>
+    <Container isPostModalOpen={isPostModalOpen}>
       <ModalContext.Provider
         value={{
           isModalOpen: isPostModalOpen,
@@ -108,7 +110,7 @@ export const RankingPage = () => {
           ))}
         </CardContainer>
       </Body>
-      {/* <PostModal /> */}
+      {isPostModalOpen && <PostModal />}
     </Container>
   )
 }
