@@ -5,16 +5,19 @@ import rankingData from '../documents/rankingDummyData.json'
 import Header from './header&dorwer/Header'
 
 import { ModalContext } from '../contexts/ModalContext'
+import PostModal from './PostModal'
 
 const Container = styled.div`
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 
   background: rgba(121, 167, 217, 0.15);
 `
 
 const Body = styled.body`
   display: flex;
+
+  margin: 0;
 
   justify-content: center;
   align-items: center;
@@ -105,6 +108,7 @@ export const RankingPage = () => {
           ))}
         </CardContainer>
       </Body>
+      {/* <PostModal /> */}
     </Container>
   )
 }
