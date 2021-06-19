@@ -13,7 +13,7 @@ const Cap = styled.div`
   top: 5px;
   right: 0px;
   margin-left: 12px;
-  height: 10px;
+  height: 15px;
   width: 20px;
   background-color: #fdd000;
   z-index: 2;

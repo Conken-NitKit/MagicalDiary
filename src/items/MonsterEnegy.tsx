@@ -64,7 +64,7 @@ const Monster_line_space = styled.div`
 const Monster_line = styled.div`
   position: relative;
   height: 40px;
-  width: 10%;
+  width: 14%;
   background: lime;
 `
 

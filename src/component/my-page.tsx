@@ -33,9 +33,10 @@ const AddButton = styled(AddIcon)`
 
 const Since = styled.p`
   text-align: center;
-  margin-top: 20px;
+  margin-top: 5px;
   right: 0;
   color: #555555;
+  font-size: 14px;
 `
 
 const Container = styled.div`

@@ -56,18 +56,18 @@ const Circle = styled.div`
   top: 0px;
   right: 0px;
   margin-top: 9px;
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
   border-radius: 100px;
-  border: solid 6px white;
+  border: solid 5px white;
   background-color: #333333;
 `
 
 const Point = styled.div`
-  margin-top: 8px;
-  margin-left: 22px;
-  height: 6px;
-  width: 10px;
+  margin-top: 6px;
+  margin-left: 24px;
+  height: 5px;
+  width: 8px;
   background-color: white;
   border: solid 6px #333333;
 `
