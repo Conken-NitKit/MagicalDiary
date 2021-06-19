@@ -1,10 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Div = styled.div`
-  margin-left: 1%;
-  margin-right: 1%;
-  margin-top: 20px;
+const Container = styled.div`
+  margin: 20px 1% 0;
 `
 
 const Outline = styled.div`
@@ -20,27 +18,27 @@ const Down = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  top: -10px;
   border-radius: 50%;
   height: 20%;
   width: 100%;
-  top: -10px;
   background: #7e7878;
 `
 
-const Top_surface = styled.div`
+const TopSurface = styled.div`
   background: #7e7878;
   margin-top: -16.18%;
 `
 
-const Down_surface = styled.div`
+const DownSurface = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  top: -5px;
   border-radius: 50%;
   height: 20%;
   width: 100%;
-  top: -5px;
   background: #333333;
   margin-top: -32.36%;
 `
@@ -53,8 +51,6 @@ const Side = styled.div`
 `
 
 const Circle = styled.div`
-  top: 0px;
-  right: 0px;
   margin-top: 9px;
   height: 25px;
   width: 25px;
@@ -72,22 +68,22 @@ const Point = styled.div`
   border: solid 6px #333333;
 `
 
-function Zone() {
+const Zone = () => {
   return (
-    <Div>
+    <Container>
       <Outline>
         <Down>
-          <Top_surface></Top_surface>
+          <TopSurface />
         </Down>
         <Side>
           {/* ここまで共通 */}
           <Circle>
-            <Point></Point>
+            <Point />
           </Circle>
         </Side>
-        <Down_surface />
+        <DownSurface />
       </Outline>
-    </Div>
+    </Container>
   )
 }
 

@@ -7,14 +7,10 @@ import Zone from '../items/Zone'
 import MonsterEnegy from '../items/MonsterEnegy'
 import CheletedLemon from '../items/ChelatedLemon'
 
-const Body = styled.body`
-  position: relative;
-  top: 0px;
-  left: 0px;
+const Body = styled.div`
   background-color: rgba(121, 167, 217, 0.15);
   min-height: 100vh;
   width: 100vw;
-  margin-left: 0px;
 `
 
 const UserName = styled.p`
@@ -34,7 +30,6 @@ const AddButton = styled(AddIcon)`
 const Since = styled.p`
   text-align: center;
   margin-top: 5px;
-  right: 0;
   color: #555555;
   font-size: 14px;
 `
@@ -44,14 +39,9 @@ const Container = styled.div`
   justify-content: flex-start;
   align-items: flex-end;
   align-content: space-around;
-
   align-self: flex-end;
   flex-flow: row wrap-reverse;
-`
-
-const Space = styled.div`
-  height: 70px;
-  width: 100vw;
+  margin-top: 70px;
 `
 
 const MyPage = () => {
@@ -62,7 +52,6 @@ const MyPage = () => {
         <UserName>ユーザー名</UserName>
         <Since>2020年３月から社畜</Since>
         <AddButton style={{ fontSize: 45 }} />
-        <Space></Space>
         <Container>
           <MonsterEnegy />
           <Zone />

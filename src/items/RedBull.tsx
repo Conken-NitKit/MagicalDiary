@@ -1,46 +1,42 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Div = styled.div`
-  margin-left: 1%;
-  margin-right: 1%;
-  margin-top: 20px;
+const Container = styled.div`
+  margin: 20px 1% 0;
 `
 
 const Outline = styled.div`
-  position: relative;
-  top: 0px;
   height: 85px;
   width: 66px;
   background: #4977bc;
 `
 
 const Top = styled.div`
+  position: relative;
+  top: -10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   border-radius: 50%;
   height: 20%;
   width: 100%;
-  top: -10px;
   background: #7e7878;
 `
 
-const Top_surface = styled.div`
+const TopSurface = styled.div`
   background: #7e7878;
   margin-top: -16%;
 `
 
-const Down_surface = styled.div`
+const DownSurface = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  top: -35px;
   border-radius: 50%;
   height: 20%;
   width: 100%;
-  top: -35px;
   background: #4977bc;
   margin-top: -32.36%;
 `
@@ -84,20 +80,20 @@ const Text = styled.div`
   z-index: 2;
 `
 
-function RedBull() {
+const RedBull = () => {
   return (
-    <Div>
+    <Container>
       <Outline>
         <Top>
-          <Top_surface></Top_surface>
+          <TopSurface />
         </Top>
         {/* ここまで共通 */}
         <Text>RedBull</Text>
         <TopWhiteTrapezoid />
         <WhiteTrapezoid />
-        <Down_surface />
+        <DownSurface />
       </Outline>
-    </Div>
+    </Container>
   )
 }
 

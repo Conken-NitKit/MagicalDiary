@@ -1,15 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Div = styled.div`
-  margin-left: 1%;
-  margin-right: 1%;
-  margin-top: 20px;
+const Container = styled.div`
+  margin: 20px 1% 0;
 `
 
 const Outline = styled.div`
-  position: relative;
-  top: 0px;
   height: 85px;
   width: 66px;
   background: #333333;
@@ -27,7 +23,7 @@ const Down = styled.div`
   background: #7e7878;
 `
 
-const Top_surface = styled.div`
+const TopSurface = styled.div`
   background: #7e7878;
   margin-top: -16.18%;
 `
@@ -51,41 +47,38 @@ const Side = styled.div`
   height: 100%;
   width: 100%;
 `
-const Monster_line_space = styled.div`
+const MonsterLineSpace = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  top: 0px;
   margin-top: 15px;
   height: 30px;
   width: 50%;
 `
 
 const Monster_line = styled.div`
-  position: relative;
   height: 40px;
   width: 14%;
   background: lime;
 `
 
-function MonsterEnegy() {
+const MonsterEnegy = () => {
   return (
-    <Div>
+    <Container>
       <Outline>
         <Down>
-          <Top_surface>{/* <Mouth /> */}</Top_surface>
+          <TopSurface />
         </Down>
         <Side>
-          <Monster_line_space>
-            <Monster_line></Monster_line>
-            <Monster_line></Monster_line>
-            <Monster_line></Monster_line>
-          </Monster_line_space>
+          <MonsterLineSpace>
+            <Monster_line />
+            <Monster_line />
+            <Monster_line />
+          </MonsterLineSpace>
         </Side>
-
         <Down_surface />
       </Outline>
-    </Div>
+    </Container>
   )
 }
 

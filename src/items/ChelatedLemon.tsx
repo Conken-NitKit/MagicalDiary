@@ -1,10 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Div = styled.div`
-  margin-left: calc(12px + 1%);
-  margin-right: calc(12px + 1%);
-  margin-top: 20px;
+const Container = styled.div`
+  margin: 20px calc(12px + 1%) 0;
 `
 
 const Cap = styled.div`
@@ -64,33 +62,24 @@ const CircleLemon = styled.div`
 `
 
 const TopLemon = styled.div`
-  position: relative;
   display: flex;
-  top: 0px;
-  left: 7px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 7px 7px 0;
-  border-radius: 4px;
-  border-color: transparent #fdd000 transparent transparent;
+  margin-left: 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #fdd000;
 `
 
 const ButtomLemon = styled.div`
-  top: 0px;
+  display: flex;
   margin-top: 13px;
-  right: 0px;
-  width: 0;
-  height: 0;
-  border-radius: 4px;
-  border-style: solid;
-  border-width: 7px 0 0 7px;
-  border-color: transparent transparent transparent #fdd000;
+  border-radius: 50%;
+  border-left: solid 7px #fdd000;
 `
 
-function MonsterEnegy() {
+const MonsterEnegy = () => {
   return (
-    <Div>
+    <Container>
       <Cap />
       <TopSurface />
       <SecondBox>
@@ -100,7 +89,7 @@ function MonsterEnegy() {
         </CircleLemon>
       </SecondBox>
       <ButtomSurface />
-    </Div>
+    </Container>
   )
 }
 
