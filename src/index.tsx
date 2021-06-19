@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter, Route } from 'react-router-dom'
 import RankingPage from 'component/ranking'
-import Login from 'component/login'
+import Login from 'component/Login'
 import MyPage from 'component/my-page'
 
 ReactDOM.render(
