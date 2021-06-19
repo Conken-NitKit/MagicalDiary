@@ -49,7 +49,7 @@ const Rank = styled.p`
   margin: 0;
   width: 15%;
 
-  font: 700 1.25vw 'M PLUS Rounded 1c';
+  font: 700 1.25vw 'M PLUS Rounded 1c', sans-serif;
 `
 
 const Name = styled(Link)<{ rank: number }>`
@@ -59,7 +59,7 @@ const Name = styled(Link)<{ rank: number }>`
 
   width: 85%;
 
-  font: 2vw 'M PLUS Rounded 1c';
+  font: 2vw 'M PLUS Rounded 1c', sans-serif;
 
   color: black;
 
