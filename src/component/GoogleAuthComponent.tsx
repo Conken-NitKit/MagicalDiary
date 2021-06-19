@@ -1,12 +1,8 @@
-import React from 'react'
 import SocialButton from './SocialButton'
 
 const GoogleAuthComponent = () => {
-  let loginStatus = localStorage.getItem('login')
-
+  // eslint-disable-next-line no-unused-vars
   const handleSocialLogin = (user: void) => {
-    console.log('success')
-    console.log(user)
     localStorage.setItem('login', 'true')
   }
 
