@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 
 import { ModalContext } from '../contexts/ModalContext'
+import CloseIcon from '@material-ui/icons/Close'
 
 const Container = styled.div`
   display: flex;
@@ -78,13 +79,11 @@ const Description = styled.a`
   font: 900 1.4vw 'M PLUS Rounded 1c';
 `
 
-const Cancel = styled.img`
+const Cancel = styled(CloseIcon)`
   margin: 0 10% 0 auto;
 
   height: 60%;
   width: 10%;
-
-  background: blue;
 `
 
 const Preview = styled.img`
