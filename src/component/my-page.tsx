@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from './header&dorwer/header'
 import styled from 'styled-components'
 import AddIcon from '@material-ui/icons/Add'
 import Redbull from '../items/RedBull'
@@ -20,7 +21,7 @@ const UserName = styled.p`
   text-align: center;
   font-size: 40px;
   margin: 0;
-  padding-top: 60px;
+  padding-top: 140px;
   font-family: 'M PLUS Rounded 1c';
   color: #101841;
 `
@@ -33,7 +34,6 @@ const AddButton = styled(AddIcon)`
 const Since = styled.p`
   text-align: center;
   margin-top: 20px;
-  margin-bottom: 20px;
   right: 0;
   color: #555555;
 `
@@ -49,32 +49,35 @@ const Container = styled.div`
 `
 
 const Space = styled.div`
-  height: 130px;
+  height: 70px;
   width: 100vw;
 `
 
 const MyPage = () => {
   return (
-    <Body>
-      <UserName>ユーザー名</UserName>
-      <Since>2020年３月から社畜</Since>
-      <AddButton style={{ fontSize: 45 }} />
-      <Space></Space>
-      <Container>
-        <MonsterEnegy />
-        <Zone />
-        <CheletedLemon />
-        <Redbull />
-        <MonsterEnegy />
-        <Zone />
-        <CheletedLemon />
-        <Redbull />
-        <MonsterEnegy />
-        <Zone />
-        <CheletedLemon />
-        <Redbull />
-      </Container>
-    </Body>
+    <div>
+      <Header />
+      <Body>
+        <UserName>ユーザー名</UserName>
+        <Since>2020年３月から社畜</Since>
+        <AddButton style={{ fontSize: 45 }} />
+        <Space></Space>
+        <Container>
+          <MonsterEnegy />
+          <Zone />
+          <CheletedLemon />
+          <Redbull />
+          <MonsterEnegy />
+          <Zone />
+          <CheletedLemon />
+          <Redbull />
+          <MonsterEnegy />
+          <Zone />
+          <CheletedLemon />
+          <Redbull />
+        </Container>
+      </Body>
+    </div>
   )
 }
 
