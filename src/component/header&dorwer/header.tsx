@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppBar, Button, Toolbar } from '@material-ui/core'
+import { AppBar, Toolbar } from '@material-ui/core'
 import styled from 'styled-components'
 import Humberger from './Humberger'
 
@@ -25,7 +25,7 @@ const Header: React.VFC = () => {
     <HeaderBar>
       <HeaderTool>
         <TitleButton>Magical Diary</TitleButton>
-        <Humberger></Humberger>
+        <Humberger />
       </HeaderTool>
     </HeaderBar>
   )

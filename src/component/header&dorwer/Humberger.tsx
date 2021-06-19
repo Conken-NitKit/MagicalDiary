@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Button from '@material-ui/core/Button'
+import { GoogleLogout } from 'react-google-login'
+import { useCookies } from 'react-cookie'
 
 const HumbergerButton = styled.button`
   position: absolute;
@@ -65,8 +66,14 @@ const LinkStyles = styled(Link)`
 
 const Humberger = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [, , removeCookie] = useCookies()
   const menuFunction = () => {
     setIsOpen(!isOpen)
+  }
+
+  const handleLogout = () => {
+    removeCookie('authToken', { path: '/' })
+    console.log('logout')
   }
   return (
     <>
@@ -88,8 +95,14 @@ const Humberger = () => {
               </LinkStyles>
             </HumbergerContent>
             <HumbergerContent>
-              <LinkStyles to="/logout">
-                <MarkerLine>Logout</MarkerLine>
+              <LinkStyles to="/login">
+                <GoogleLogout
+                  clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID!}
+                  buttonText="Logout"
+                  onLogoutSuccess={handleLogout}
+                >
+                  rogout
+                </GoogleLogout>
               </LinkStyles>
             </HumbergerContent>
           </HumbergerList>
