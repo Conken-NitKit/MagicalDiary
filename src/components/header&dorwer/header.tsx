@@ -25,7 +25,7 @@ const Header: React.VFC = () => {
     <HeaderBar>
       <HeaderTool>
         <TitleButton>Magical Diary</TitleButton>
-        <Humberger></Humberger>
+        <Humberger />
       </HeaderTool>
     </HeaderBar>
   )

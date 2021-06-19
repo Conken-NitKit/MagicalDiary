@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './header&dorwer/header'
+import Header from './header&dorwer/Header'
 
 const MyPage = () => {
   return (

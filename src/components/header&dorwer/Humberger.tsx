@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
+
+import ModalContext from 'contexts/ModalContext'
 
 const HumbergerButton = styled.button`
   position: absolute;
@@ -68,6 +70,9 @@ const Humberger = () => {
   const menuFunction = () => {
     setIsOpen(!isOpen)
   }
+
+  const { setIsModalOpen } = useContext(ModalContext)
+
   return (
     <>
       <HumbergerButton onClick={() => menuFunction()}></HumbergerButton>
@@ -75,7 +80,13 @@ const Humberger = () => {
         <HumbergerBar>
           <HumbergerList>
             <HumbergerContent>
-              <MarkerLine>Post</MarkerLine>
+              <MarkerLine
+                onClick={() => {
+                  setIsModalOpen(true)
+                }}
+              >
+                Post
+              </MarkerLine>
             </HumbergerContent>
             <HumbergerContent>
               <LinkStyles to="/">

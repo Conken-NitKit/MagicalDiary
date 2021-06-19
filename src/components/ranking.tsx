@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import rankingData from '../documents/rankingDummyData.json'
-import Header from './header&dorwer/header'
+import Header from './header&dorwer/Header'
 
-import { ModalContext } from 'contexts/modalContext'
+import { ModalContext } from '../contexts/ModalContext'
 
 const Container = styled.div`
   height: 100vh;
