@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppBar, Button, Toolbar } from '@material-ui/core'
+import { AppBar, Toolbar } from '@material-ui/core'
 import styled from 'styled-components'
 import Humberger from './Humberger'
 

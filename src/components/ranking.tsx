@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import rankingData from '../documents/rankingDummyData.json'
 import Header from './header&dorwer/Header'
+import Cookies from 'js-cookie'
 
 import { ModalContext } from '../contexts/ModalContext'
 import PostModal from './PostModal'
@@ -84,8 +85,14 @@ const Name = styled(Link)<{ rank: number }>`
       : 'none'};
 `
 
+console.log(process.env.REACT_APP_GOOGLE_CLIENT_ID)
+
 export const RankingPage = () => {
   const [isPostModalOpen, setIsPostModalOpen] = useState(false)
+  const test = () => {
+    const data = Cookies.get('authToken')
+    console.log(data)
+  }
 
   return (
     <ModalContext.Provider
