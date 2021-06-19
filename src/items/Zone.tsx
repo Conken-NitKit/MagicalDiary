@@ -65,7 +65,7 @@ const Circle = styled.div`
 
 const Point = styled.div`
   margin-top: 6px;
-  margin-left: 24px;
+  margin-left: 18px;
   height: 5px;
   width: 8px;
   background-color: white;

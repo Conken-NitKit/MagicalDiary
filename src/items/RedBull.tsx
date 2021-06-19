@@ -29,7 +29,7 @@ const Top = styled.div`
 
 const Top_surface = styled.div`
   background: #7e7878;
-  margin-top: -16.18%;
+  margin-top: -16%;
 `
 
 const Down_surface = styled.div`
@@ -49,12 +49,13 @@ const WhiteTrapezoid = styled.div`
   display: flex;
   position: relative;
   top: -47px;
-  right: -0px;
+  right: 0px;
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 30px 28px 0 0;
+  border-width: 30px 30px 0 0;
   border-color: white transparent transparent transparent;
+  z-index: 2;
 `
 
 const TopWhiteTrapezoid = styled.div`
@@ -66,7 +67,7 @@ const TopWhiteTrapezoid = styled.div`
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 0 60px 40px;
+  border-width: 0 0 60px 42px;
   border-color: transparent transparent white transparent;
 `
 
