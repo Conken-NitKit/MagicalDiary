@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { GoogleLogout } from 'react-google-login'
 import { useCookies } from 'react-cookie'
+
+import ModalContext from 'contexts/ModalContext'
 
 const HumbergerButton = styled.button`
   position: absolute;
@@ -70,6 +72,7 @@ const Humberger = () => {
   const menuFunction = () => {
     setIsOpen(!isOpen)
   }
+  const { setIsModalOpen } = useContext(ModalContext)
 
   const handleLogout = () => {
     removeCookie('authToken', { path: '/' })
@@ -82,7 +85,13 @@ const Humberger = () => {
         <HumbergerBar>
           <HumbergerList>
             <HumbergerContent>
-              <MarkerLine>Post</MarkerLine>
+              <MarkerLine
+                onClick={() => {
+                  setIsModalOpen(true)
+                }}
+              >
+                Post
+              </MarkerLine>
             </HumbergerContent>
             <HumbergerContent>
               <LinkStyles to="/">

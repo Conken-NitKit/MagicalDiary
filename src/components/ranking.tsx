@@ -1,12 +1,18 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import rankingData from '../documents/rankingDummyData.json'
 import Header from './header&dorwer/header'
 import Cookies from 'js-cookie'
 
-const Container = styled.div`
+import { ModalContext } from '../contexts/ModalContext'
+import PostModal from './PostModal'
+
+const Container = styled.div<{ isPostModalOpen: boolean }>`
   height: 100vh;
   width: 100vw;
+
+  overflow: ${(props) => (props.isPostModalOpen ? 'hidden' : 'scroll')};
 
   background: rgba(121, 167, 217, 0.15);
 `
@@ -17,19 +23,21 @@ const Body = styled.body`
   justify-content: center;
   align-items: center;
 
-  height: 100%;
+  margin: 0;
+
   width: 100%;
 `
 
 const CardContainer = styled.ul`
-  margin: 0;
+  position: relative;
 
-  padding: 0;
+  bottom: 0;
 
-  height: 80%;
-  width: 25%;
+  margin: 80px 0 0 0;
 
-  overflow: scroll;
+  padding: 0 37.5%;
+
+  width: 100%;
 
   list-style: none;
 `
@@ -80,28 +88,37 @@ const Name = styled(Link)<{ rank: number }>`
 console.log(process.env.REACT_APP_GOOGLE_CLIENT_ID)
 
 export const RankingPage = () => {
+  const [isPostModalOpen, setIsPostModalOpen] = useState(false)
   const test = () => {
     const data = Cookies.get('authToken')
     console.log(data)
   }
 
   return (
-    <Container>
-      <Header />
-      <Body>
-        <button onClick={test}>hogehoge</button>
-        <CardContainer>
-          {rankingData.map(({ name }, index) => (
-            <Card>
-              <Rank>{index + 1}位</Rank>
-              <Name to="/" rank={index}>
-                {name}
-              </Name>
-            </Card>
-          ))}
-        </CardContainer>
-      </Body>
-    </Container>
+    <ModalContext.Provider
+      value={{
+        isModalOpen: isPostModalOpen,
+        setIsModalOpen: setIsPostModalOpen,
+      }}
+    >
+      <Container isPostModalOpen={isPostModalOpen}>
+        <Header />
+
+        <Body>
+          <CardContainer>
+            {rankingData.map(({ name }, index) => (
+              <Card>
+                <Rank>{index + 1}位</Rank>
+                <Name to="/" rank={index}>
+                  {name}
+                </Name>
+              </Card>
+            ))}
+          </CardContainer>
+        </Body>
+        {isPostModalOpen && <PostModal />}
+      </Container>
+    </ModalContext.Provider>
   )
 }
 
