@@ -1,5 +1,6 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import ReactDOM from 'react-dom'
+import axios from 'axios'
 import styled from 'styled-components'
 
 import { ModalContext } from '../contexts/ModalContext'
@@ -51,6 +52,30 @@ const AddButtonSpace = styled.div`
   width: 100%;
 `
 
+const InputSpace = styled.label`
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin: 0 10%;
+  border-radius: 0.3vw;
+
+  height: 50%;
+  width: 33%;
+
+  font: 900 1.4vw 'M PLUS Rounded 1c';
+
+  color: white;
+
+  background: rgba(26, 42, 124, 0.5);
+`
+
+const Input = styled.input`
+  display: none;
+`
+
 const AddButton = styled.button`
   margin: 0 10%;
 
@@ -79,6 +104,19 @@ const Description = styled.a`
   font: 900 1.4vw 'M PLUS Rounded 1c';
 `
 
+const ImageDescription = styled(Description)`
+  display: flex;
+
+  align-items: center;
+
+  height: 50%;
+  width: 25%;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+`
+
 const Cancel = styled(CloseIcon)`
   margin: 0 10% 0 auto;
 
@@ -101,14 +139,46 @@ const ConfirmationButtonSpace = styled(AddButtonSpace)`
 export const PostModal = () => {
   const el = document.getElementById('modal')
 
+  const [image, setImage] = useState('')
   const { setIsModalOpen } = useContext(ModalContext)
 
   return ReactDOM.createPortal(
     <Container>
       <Modal>
         <AddButtonSpace>
-          <AddButton>ファイルを選択</AddButton>
-          <Description>hrrn.png</Description>
+          <InputSpace>
+            <form method="post" encType="multipart/form-data">
+              <Input
+                type="file"
+                name="energy drink"
+                onChange={(event) => {
+                  const data = new FormData()
+                  const header = {
+                    headers: {
+                      'Prediction-Key': '73e1471c984c46fe8bcbe1ab3c8be241',
+                      'Content-Type': 'application/octet-stream',
+                    },
+                  }
+                  if (!event.target.files) return
+                  const postFile = event.target.files[0]
+                  axios
+                    .post(
+                      'https://magical-diary.cognitiveservices.azure.com/customvision/v3.0/Prediction/60ad0f7d-db0f-4b06-a9c3-77a023006ef0/classify/iterations/magical-diary/image',
+                      postFile,
+                      header,
+                    )
+                    .then((response) => {
+                      setImage(postFile.name)
+                    })
+                    .catch((error) => {
+                      console.log(error)
+                    })
+                }}
+              />
+            </form>
+            ファイルを選択
+          </InputSpace>
+          <ImageDescription>{image}</ImageDescription>
           <Cancel
             onClick={() => {
               setIsModalOpen(false)
