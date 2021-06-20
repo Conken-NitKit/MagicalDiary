@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppBar, Button, Toolbar } from '@material-ui/core'
+import { AppBar, Toolbar } from '@material-ui/core'
 import styled from 'styled-components'
 import Humberger from './Humberger'
 
@@ -10,7 +10,7 @@ const HeaderTool = styled(Toolbar)`
   background-color: #ebf2f9;
   height: 80px;
 `
-const TitleButton = styled.button`
+export const TitleButton = styled.button`
   font-size: 40px;
   font-style: normal;
   font-weight: normal;
@@ -25,7 +25,7 @@ const Header: React.VFC = () => {
     <HeaderBar>
       <HeaderTool>
         <TitleButton>Magical Diary</TitleButton>
-        <Humberger></Humberger>
+        <Humberger />
       </HeaderTool>
     </HeaderBar>
   )

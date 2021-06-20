@@ -1,17 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './index.css'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter, Route } from 'react-router-dom'
-import RankingPage from 'component/ranking'
-import Login from 'component/login'
-import MyPage from 'component/my-page'
+import RankingPage from './components/ranking'
+import GoogleAuthComponent from 'components/GoogleAuthComponent'
+import MyPage from 'components/my-page'
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <>
         <Route exact path="/" component={RankingPage} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/login" component={GoogleAuthComponent} />
         <Route exact path="/mypage" component={MyPage} />
       </>
     </BrowserRouter>

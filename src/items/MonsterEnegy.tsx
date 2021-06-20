@@ -1,20 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Body = styled.body`
-  position: relative;
-  top: 16.18px;
-  height: 165.8px;
-  width: 100px;
-  margin-top: 100px;
-  background: #333333;
+const Container = styled.div`
+  margin: 20px 1% 0;
 `
 
 const Outline = styled.div`
-  position: relative;
-  top: -30px;
-  height: 162.8px;
-  width: 100px;
+  height: 85px;
+  width: 66px;
   background: #333333;
 `
 
@@ -26,22 +19,13 @@ const Down = styled.div`
   border-radius: 50%;
   height: 20%;
   width: 100%;
-  top: -16px;
+  top: -10px;
   background: #7e7878;
 `
 
-const Top_surface = styled.div`
+const TopSurface = styled.div`
   background: #7e7878;
   margin-top: -16.18%;
-`
-
-const Mouth = styled.div`
-  border-top: 8.09px solid dimgray;
-  border-left: 5px solid dimgray;
-  border-right: 5px solid transparent;
-  border-bottom: 8.18px solid transparent;
-  height: 0;
-  width: 0;
 `
 
 const Down_surface = styled.div`
@@ -52,7 +36,7 @@ const Down_surface = styled.div`
   border-radius: 50%;
   height: 20%;
   width: 100%;
-  top: 18.5px;
+  top: -5px;
   background: #333333;
   margin-top: -32.36%;
 `
@@ -63,45 +47,38 @@ const Side = styled.div`
   height: 100%;
   width: 100%;
 `
-const Monster_line_space = styled.div`
+const MonsterLineSpace = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
-  width: 60%;
+  margin-top: 15px;
+  height: 30px;
+  width: 50%;
 `
 
 const Monster_line = styled.div`
-  position: relative;
-  height: 60%;
-  width: 10%;
+  height: 40px;
+  width: 14%;
   background: lime;
 `
 
-function MonsterEnegy() {
+const MonsterEnegy = () => {
   return (
-    <html>
-      <Body>
-        <Outline>
-          <Down>
-            <Top_surface>
-              <Mouth />
-            </Top_surface>
-          </Down>
-          <Side>
-            {/* ここまで共通 */}
-
-            <Monster_line_space>
-              <Monster_line></Monster_line>
-              <Monster_line></Monster_line>
-              <Monster_line></Monster_line>
-            </Monster_line_space>
-          </Side>
-
-          <Down_surface />
-        </Outline>
-      </Body>
-    </html>
+    <Container>
+      <Outline>
+        <Down>
+          <TopSurface />
+        </Down>
+        <Side>
+          <MonsterLineSpace>
+            <Monster_line />
+            <Monster_line />
+            <Monster_line />
+          </MonsterLineSpace>
+        </Side>
+        <Down_surface />
+      </Outline>
+    </Container>
   )
 }
 

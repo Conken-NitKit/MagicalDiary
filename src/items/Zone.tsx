@@ -1,20 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Body = styled.body`
-  position: relative;
-  top: 16.18px;
-  height: 165.8px;
-  width: 100px;
-  margin-top: 100px;
-  background: #333333;
+const Container = styled.div`
+  margin: 20px 1% 0;
 `
 
 const Outline = styled.div`
   position: relative;
-  top: -30px;
-  height: 162.8px;
-  width: 100px;
+  top: 0px;
+  height: 85px;
+  width: 66px;
   background: #333333;
 `
 
@@ -23,36 +18,27 @@ const Down = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  top: -10px;
   border-radius: 50%;
   height: 20%;
   width: 100%;
-  top: -16px;
   background: #7e7878;
 `
 
-const Top_surface = styled.div`
+const TopSurface = styled.div`
   background: #7e7878;
   margin-top: -16.18%;
 `
 
-const Mouth = styled.div`
-  border-top: 8.09px solid dimgray;
-  border-left: 5px solid dimgray;
-  border-right: 5px solid transparent;
-  border-bottom: 8.18px solid transparent;
-  height: 0;
-  width: 0;
-`
-
-const Down_surface = styled.div`
+const DownSurface = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  top: -5px;
   border-radius: 50%;
   height: 20%;
   width: 100%;
-  top: 18.5px;
   background: #333333;
   margin-top: -32.36%;
 `
@@ -65,46 +51,39 @@ const Side = styled.div`
 `
 
 const Circle = styled.div`
-  top: 0px;
-  right: 0px;
-  margin-top: 40px;
-  height: 40px;
-  width: 40px;
+  margin-top: 9px;
+  height: 25px;
+  width: 25px;
   border-radius: 100px;
-  border: solid 8px white;
+  border: solid 5px white;
   background-color: #333333;
 `
 
 const Point = styled.div`
-  margin-top: 9px;
-  margin-left: 30px;
-  height: 8px;
-  width: 15px;
+  margin-top: 6px;
+  margin-left: 18px;
+  height: 5px;
+  width: 8px;
   background-color: white;
-  border: solid 9px #333333;
+  border: solid 6px #333333;
 `
 
-function Zone() {
+const Zone = () => {
   return (
-    <html>
-      <Body>
-        <Outline>
-          <Down>
-            <Top_surface>
-              <Mouth />
-            </Top_surface>
-          </Down>
-          <Side>
-            {/* ここまで共通 */}
-            <Circle>
-              <Point></Point>
-            </Circle>
-          </Side>
-
-          <Down_surface />
-        </Outline>
-      </Body>
-    </html>
+    <Container>
+      <Outline>
+        <Down>
+          <TopSurface />
+        </Down>
+        <Side>
+          {/* ここまで共通 */}
+          <Circle>
+            <Point />
+          </Circle>
+        </Side>
+        <DownSurface />
+      </Outline>
+    </Container>
   )
 }
 
