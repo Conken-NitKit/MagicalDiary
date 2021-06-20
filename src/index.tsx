@@ -5,6 +5,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import RankingPage from 'component/ranking'
 import GoogleAuthComponent from 'component/GoogleAuthComponent'
 import MyPage from 'component/my-page'
+import './index.css'
 
 ReactDOM.render(
   <React.StrictMode>
