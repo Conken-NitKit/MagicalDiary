@@ -31,7 +31,6 @@ const GoogleAuthComponent = () => {
 
   const responseGoogle = (response: any) => {
     setCookie('authToken', response.Aa, { path: '/' })
-    console.log(response.Aa)
   }
 
   const LoginContent = styled.div`
@@ -54,7 +53,7 @@ const GoogleAuthComponent = () => {
     padding-bottom: 30px;
     align-self: center;
     ${sp`
-    font-size: 50px;
+      font-size: 50px;
     `}
   `
   const LoginButton = styled.button`
