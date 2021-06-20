@@ -76,6 +76,7 @@ const Humberger = () => {
 
   const handleLogout = () => {
     removeCookie('authToken', { path: '/' })
+    removeCookie('userName', { path: '/' })
     console.log('logout')
   }
   return (
