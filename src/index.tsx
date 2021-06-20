@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './index.css'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter, Route } from 'react-router-dom'
-import RankingPage from 'component/ranking'
-import GoogleAuthComponent from 'component/GoogleAuthComponent'
-import MyPage from 'component/my-page'
+import RankingPage from './components/ranking'
+import GoogleAuthComponent from 'components/GoogleAuthComponent'
+import MyPage from 'components/my-page'
 
 ReactDOM.render(
   <React.StrictMode>
