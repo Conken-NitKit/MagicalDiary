@@ -1,11 +1,14 @@
 //import SocialButton from './SocialButton'
 import { GoogleLogin } from 'react-google-login'
 import { useCookies } from 'react-cookie'
+import { useHistory } from 'react-router'
 import styled from 'styled-components'
 import { sp } from './media'
+import Cookies from 'js-cookie'
 
 const GoogleAuthComponent = () => {
   const [, setCookie] = useCookies()
+  const history = useHistory()
 
   // // eslint-disable-next-line no-unused-vars
   // const handleSocialLogin = (user: any) => {
@@ -31,6 +34,9 @@ const GoogleAuthComponent = () => {
 
   const responseGoogle = (response: any) => {
     setCookie('authToken', response.Aa, { path: '/' })
+    setCookie('userName', response.ct.Ue, { path: '/' })
+    Cookies.get('authToken')
+    history.go(0)
   }
 
   const LoginContent = styled.div`
