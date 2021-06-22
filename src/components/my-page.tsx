@@ -45,26 +45,40 @@ const Container = styled.div`
 `
 
 const MyPage = () => {
+  const sampleDrinks = ['Zone', 'Monster', 'Monster']
+  const Drinks = sampleDrinks.reverse()
+
+  const total = 0 + Drinks.length
+
+  const sampleTimes = [2020, 3, 22]
+  const result = sampleTimes.join('/')
+
+  const sampleUserName = ['kotlin']
+
   return (
     <div>
       <Header />
       <Body>
-        <UserName>ユーザー名</UserName>
-        <Since>2020年３月から社畜</Since>
-        <AddButton style={{ fontSize: 45 }} />
+        <UserName>{sampleUserName}</UserName>
+        <Since>
+          総数{total}本<br />
+          {result}から社畜
+        </Since>
+        {/* <AddButton style={{ fontSize: 45 }} onClick={() => } /> */}
         <Container>
-          <MonsterEnegy />
-          <Zone />
-          <CheletedLemon />
-          <Redbull />
-          <MonsterEnegy />
-          <Zone />
-          <CheletedLemon />
-          <Redbull />
-          <MonsterEnegy />
-          <Zone />
-          <CheletedLemon />
-          <Redbull />
+          {sampleDrinks.map((sampleDrink) =>
+            sampleDrink === 'Monster' ? (
+              <MonsterEnegy />
+            ) : sampleDrink === 'Zone' ? (
+              <Zone />
+            ) : sampleDrink === 'Redbull' ? (
+              <Redbull />
+            ) : sampleDrink === 'CheletedLemon' ? (
+              <CheletedLemon />
+            ) : (
+              <div />
+            ),
+          )}
         </Container>
       </Body>
     </div>
