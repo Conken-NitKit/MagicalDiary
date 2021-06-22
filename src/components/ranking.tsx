@@ -16,7 +16,8 @@ const Container = styled.div<{ isPostModalOpen: boolean }>`
 `
 
 const Body = styled.body`
-  justify-content: space-between;
+  display: flex;
+  justify-content: center;
   align-items: center;
   width: 100%;
   align-items: flex-start;
