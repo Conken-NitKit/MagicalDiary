@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './header&dorwer/header'
 import styled from 'styled-components'
 import AddIcon from '@material-ui/icons/Add'
@@ -6,6 +6,8 @@ import Redbull from '../items/RedBull'
 import Zone from '../items/Zone'
 import MonsterEnegy from '../items/MonsterEnegy'
 import CheletedLemon from '../items/ChelatedLemon'
+import ModalContext from 'contexts/ModalContext'
+import PostModal from './PostModal'
 
 const Body = styled.div`
   background-color: rgba(121, 167, 217, 0.15);
@@ -55,6 +57,8 @@ const MyPage = () => {
 
   const sampleUserName = ['kotlin']
 
+  const [isPostModalOpen, setIsPostModalOpen] = useState<boolean>(false)
+
   return (
     <div>
       <Header />
@@ -64,7 +68,12 @@ const MyPage = () => {
           総数{total}本<br />
           {result}から社畜
         </Since>
-        {/* <AddButton style={{ fontSize: 45 }} onClick={() => } /> */}
+        <AddButton
+          style={{ fontSize: 45 }}
+          onClick={() => {
+            setIsPostModalOpen(true)
+          }}
+        />
         <Container>
           {sampleDrinks.map((sampleDrink) =>
             sampleDrink === 'Monster' ? (
@@ -80,6 +89,14 @@ const MyPage = () => {
             ),
           )}
         </Container>
+        <ModalContext.Provider
+          value={{
+            isModalOpen: isPostModalOpen,
+            setIsModalOpen: setIsPostModalOpen,
+          }}
+        >
+          {isPostModalOpen && <PostModal />}
+        </ModalContext.Provider>
       </Body>
     </div>
   )
