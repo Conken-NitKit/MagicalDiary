@@ -1,19 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Redirect } from 'react-router-dom'
 import RankingPage from './components/ranking'
 import GoogleAuthComponent from 'components/GoogleAuthComponent'
 import MyPage from 'components/my-page'
+
+import Cookies from 'js-cookie'
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <>
-        <Route exact path="/" component={RankingPage} />
-        <Route exact path="/login" component={GoogleAuthComponent} />
-        <Route exact path="/mypage" component={MyPage} />
+        <Route exact path="/">
+          {Cookies.get('authToken') !== undefined ? (
+            <RankingPage />
+          ) : (
+            <Redirect to="/login" />
+          )}
+        </Route>
+        <Route exact path="/login">
+          {Cookies.get('authToken') === undefined ? (
+            <GoogleAuthComponent />
+          ) : (
+            <Redirect to="/" />
+          )}
+        </Route>
+        <Route exact path="/mypage">
+          {Cookies.get('authToken') !== undefined ? (
+            <MyPage />
+          ) : (
+            <Redirect to="/login" />
+          )}
+        </Route>
       </>
     </BrowserRouter>
   </React.StrictMode>,

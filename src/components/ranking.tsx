@@ -19,17 +19,22 @@ const Body = styled.body`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
   width: 100%;
+  align-items: flex-start;
 `
 
 const CardContainer = styled.ul`
-  position: relative;
-  bottom: 0;
-  margin: 80px 0 0 0;
-  padding: 0 37.5%;
-  width: 100%;
-  list-style: none;
+  position: flex;
+  margin-top: 80px;
+  flex-basis: 400px;
+  height: auto;
+`
+
+const Space = styled.div`
+  position: flex;
+  flex-shrink: 2;
+  width: 200px;
+  height: 100vh; ;
 `
 
 const Card = styled.li`
@@ -44,14 +49,13 @@ const Card = styled.li`
 const Rank = styled.p`
   margin: 0;
   width: 15%;
-  font: 700 1.25vw 'M PLUS Rounded 1c';
+  font: 700 13px 'M PLUS Rounded 1c';
 `
 
 const Name = styled(Link)<{ rank: number }>`
-  border-radius: 0.3477222vw;
   padding: 0 8%;
   width: 85%;
-  font: 2vw 'M PLUS Rounded 1c';
+  font: 28px 'M PLUS Rounded 1c';
   color: black;
   text-decoration: none;
 
@@ -78,6 +82,7 @@ export const RankingPage = () => {
       <Container isPostModalOpen={isPostModalOpen}>
         <Header />
         <Body>
+          <Space />
           <CardContainer>
             {rankingData.map(({ name }, index) => (
               <Card>
@@ -88,6 +93,7 @@ export const RankingPage = () => {
               </Card>
             ))}
           </CardContainer>
+          <Space />
         </Body>
         {isPostModalOpen && <PostModal />}
       </Container>
