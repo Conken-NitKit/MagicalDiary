@@ -50,8 +50,6 @@ const MyPage = () => {
   const sampleDrinks = ['Zone', 'Monster', 'Monster']
   const Drinks = sampleDrinks.reverse()
 
-  const total = 0 + Drinks.length
-
   const sampleTimes = [2020, 3, 22]
   const result = sampleTimes.join('/')
 
@@ -65,7 +63,7 @@ const MyPage = () => {
       <Body>
         <UserName>{sampleUserName}</UserName>
         <Since>
-          総数{total}本<br />
+          総数{Drinks.length}本<br />
           {result}から社畜
         </Since>
         <AddButton
