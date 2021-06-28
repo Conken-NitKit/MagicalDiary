@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const rankingData = (url: string) => {
+export const getData = (url: string) => {
   axios
     .get(url)
     .then((results) => {
@@ -11,4 +11,4 @@ export const rankingData = (url: string) => {
     })
 }
 
-export default rankingData
+export default getData
