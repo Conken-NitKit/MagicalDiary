@@ -1,5 +1,4 @@
 import axios from 'axios'
-
 interface Data {
   name: string
   id: string
