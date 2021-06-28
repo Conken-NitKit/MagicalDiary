@@ -1,12 +1,17 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import rankingData from '../documents/rankingDummyData.json'
 import Header from './header&dorwer/header'
 import Cookies from 'js-cookie'
 
 import { ModalContext } from '../contexts/ModalContext'
+import getData from '../apis/getData'
+
 import PostModal from './PostModal'
+
+const rankingData = getData(
+  'https://app-magicaldiary-python-test.azurewebsites.net/rank',
+)
 
 const Container = styled.div<{ isPostModalOpen: boolean }>`
   height: 100vh;

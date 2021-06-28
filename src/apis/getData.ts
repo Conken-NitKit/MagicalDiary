@@ -1,6 +1,13 @@
 import axios from 'axios'
 
-export const getData = (url: string) => {
+interface Data {
+  name: string
+  id: string
+}
+
+export const getData = (url: string): Data[] => {
+  const returnData = [{ name: '', id: '' }]
+
   axios
     .get(url)
     .then((results) => {
@@ -9,6 +16,8 @@ export const getData = (url: string) => {
     .catch((error) => {
       console.log(error.status)
     })
+
+  return returnData
 }
 
 export default getData
