@@ -11,6 +11,7 @@ export const getData = (url: string): Data[] => {
   axios
     .get(url)
     .then((results) => {
+      console.log(results.data)
       return results.data
     })
     .catch((error) => {
