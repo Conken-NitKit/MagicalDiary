@@ -1,23 +1,22 @@
 import axios from 'axios'
+
 interface Data {
-  name: string
+  count: number
   id: string
+  name: string
 }
 
 export const getData = (url: string): Data[] => {
-  const returnData = [{ name: '', id: '' }]
-
   axios
     .get(url)
     .then((results) => {
-      console.log(results.data)
       return results.data
     })
     .catch((error) => {
-      console.log(error.status)
+      console.log(error.state)
     })
 
-  return returnData
+  return [{ count: 0, id: '', name: '' }]
 }
 
 export default getData

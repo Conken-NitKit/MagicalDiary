@@ -1,17 +1,19 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 import styled from 'styled-components'
 import Header from './header&dorwer/header'
 import Cookies from 'js-cookie'
 
 import { ModalContext } from '../contexts/ModalContext'
-import getData from '../apis/getData'
 
 import PostModal from './PostModal'
 
-const rankingData = getData(
-  'https://app-magicaldiary-python-test.azurewebsites.net/rank',
-)
+interface Data {
+  count: number
+  id: string
+  name: string
+}
 
 const Container = styled.div<{ isPostModalOpen: boolean }>`
   height: 100vh;
@@ -76,6 +78,13 @@ const Name = styled(Link)<{ rank: number }>`
 
 export const RankingPage = () => {
   const [isPostModalOpen, setIsPostModalOpen] = useState(false)
+  const [rankingData, setRankingData] = useState([])
+
+  axios
+    .get('https://app-magicaldiary-python-test.azurewebsites.net/rank')
+    .then((results) => {
+      setRankingData(results.data)
+    })
 
   return (
     <ModalContext.Provider
