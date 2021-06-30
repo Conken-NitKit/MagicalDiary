@@ -15,7 +15,7 @@ const Body = styled.div`
   width: 100vw;
 `
 
-const UserName = styled.p`
+const Name = styled.p`
   text-align: center;
   font-size: 40px;
   margin: 0;
@@ -47,13 +47,13 @@ const Container = styled.div`
 `
 
 const MyPage = () => {
-  const sampleDrinks = ['Zone', 'Monster', 'Monster']
-  const Drinks = sampleDrinks.reverse()
+  const Drinks = ['Zone', 'Monster', 'Monster']
+  const setDrinks = Drinks.reverse()
 
   const sampleTimes = [2020, 3, 22]
   const result = sampleTimes.join('/')
 
-  const sampleUserName = ['kotlin']
+  const UserName = ['kotlin']
 
   const [isPostModalOpen, setIsPostModalOpen] = useState<boolean>(false)
 
@@ -61,9 +61,9 @@ const MyPage = () => {
     <div>
       <Header />
       <Body>
-        <UserName>{sampleUserName}</UserName>
+        <Name>{UserName}</Name>
         <Since>
-          総数{Drinks.length}本<br />
+          総数{setDrinks.length}本<br />
           {result}から社畜
         </Since>
         <AddButton
@@ -73,14 +73,14 @@ const MyPage = () => {
           }}
         />
         <Container>
-          {sampleDrinks.map((sampleDrink) =>
-            sampleDrink === 'Monster' ? (
+          {Drinks.map((Drink) =>
+            Drink === 'Monster' ? (
               <MonsterEnegy />
-            ) : sampleDrink === 'Zone' ? (
+            ) : Drink === 'Zone' ? (
               <Zone />
-            ) : sampleDrink === 'Redbull' ? (
+            ) : Drink === 'Redbull' ? (
               <Redbull />
-            ) : sampleDrink === 'CheletedLemon' ? (
+            ) : Drink === 'CheletedLemon' ? (
               <CheletedLemon />
             ) : (
               <div />
