@@ -137,6 +137,7 @@ const ConfirmationButtonSpace = styled(AddButtonSpace)`
 `
 
 export const PostModal = () => {
+  const [suggestedDrink] = useState<string>('')
   const el = document.getElementById('modal')
 
   const [image, setImage] = useState('')
@@ -186,7 +187,7 @@ export const PostModal = () => {
           ></Cancel>
         </AddButtonSpace>
         <Preview src="" /*投稿した写真*/></Preview>
-        <Description>あなたが飲んだのはhrrnですか？</Description>
+        <Description>あなたが飲んだのは{suggestedDrink}ですか？</Description>
         <ConfirmationButtonSpace>
           <AddButton
             onClick={() => {
