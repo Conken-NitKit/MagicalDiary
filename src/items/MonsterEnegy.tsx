@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -28,7 +27,7 @@ const TopSurface = styled.div`
   margin-top: -16.18%;
 `
 
-const Down_surface = styled.div`
+const DownSurface = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,7 +55,7 @@ const MonsterLineSpace = styled.div`
   width: 50%;
 `
 
-const Monster_line = styled.div`
+const MonsterLine = styled.div`
   height: 40px;
   width: 14%;
   background: lime;
@@ -71,12 +70,12 @@ const MonsterEnegy = () => {
         </Down>
         <Side>
           <MonsterLineSpace>
-            <Monster_line />
-            <Monster_line />
-            <Monster_line />
+            <MonsterLine />
+            <MonsterLine />
+            <MonsterLine />
           </MonsterLineSpace>
         </Side>
-        <Down_surface />
+        <DownSurface />
       </Outline>
     </Container>
   )
