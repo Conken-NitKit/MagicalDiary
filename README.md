@@ -1,4 +1,5 @@
-# MagicalDiary
+# [MagicalDiary](https://magical-diary.netlify.app/login)
+
 
 ---
 
@@ -24,3 +25,4 @@
 ### 補足
 
 - 各自のブランチに push 後は Develop ブランチにプルリクを送ってください
+- 現状ESlintとprettierによる自動テストを実行しています. [husky](https://github.com/Conken-NitKit/MagicalDiary/tree/Develop/.husky)
