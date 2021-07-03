@@ -186,7 +186,9 @@ export const PostModal = () => {
             }}
           ></Cancel>
         </AddButtonSpace>
-        <Preview src="" /*投稿した写真*/></Preview>
+        
+        {/* TODO: 投稿した写真をPreviewのsrc要素の中に入れる */}
+        <Preview src="" />
         <Description>あなたが飲んだのは{suggestedDrink}ですか？</Description>
         <ConfirmationButtonSpace>
           <AddButton
