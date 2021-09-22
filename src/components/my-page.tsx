@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './header&dorwer/header'
 import styled from 'styled-components'
 import AddIcon from '@material-ui/icons/Add'
@@ -6,6 +6,8 @@ import Redbull from '../items/RedBull'
 import Zone from '../items/Zone'
 import MonsterEnegy from '../items/MonsterEnegy'
 import CheletedLemon from '../items/ChelatedLemon'
+import ModalContext from 'contexts/ModalContext'
+import PostModal from './PostModal'
 
 const Body = styled.div`
   background-color: rgba(121, 167, 217, 0.15);
@@ -13,7 +15,7 @@ const Body = styled.div`
   width: 100vw;
 `
 
-const UserName = styled.p`
+const Name = styled.p`
   text-align: center;
   font-size: 40px;
   margin: 0;
@@ -45,41 +47,54 @@ const Container = styled.div`
 `
 
 const MyPage = () => {
-  const sampleDrinks = ['Zone', 'Monster', 'Monster']
-  const Drinks = sampleDrinks.reverse()
-
-  const total = 0 + Drinks.length
+  const Drinks = ['Zone', 'Monster', 'Monster']
+  const setDrinks = Drinks.reverse()
 
   const sampleTimes = [2020, 3, 22]
   const result = sampleTimes.join('/')
 
-  const sampleUserName = ['kotlin']
+  const UserName = ['kotlin']
+
+  const [isPostModalOpen, setIsPostModalOpen] = useState<boolean>(false)
 
   return (
     <div>
       <Header />
       <Body>
-        <UserName>{sampleUserName}</UserName>
+        <Name>{UserName}</Name>
         <Since>
-          総数{total}本<br />
+          総数{setDrinks.length}本<br />
           {result}から社畜
         </Since>
-        {/* <AddButton style={{ fontSize: 45 }} onClick={() => } /> */}
+        <AddButton
+          style={{ fontSize: 45 }}
+          onClick={() => {
+            setIsPostModalOpen(true)
+          }}
+        />
         <Container>
-          {sampleDrinks.map((sampleDrink) =>
-            sampleDrink === 'Monster' ? (
+          {Drinks.map((Drink) =>
+            Drink === 'Monster' ? (
               <MonsterEnegy />
-            ) : sampleDrink === 'Zone' ? (
+            ) : Drink === 'Zone' ? (
               <Zone />
-            ) : sampleDrink === 'Redbull' ? (
+            ) : Drink === 'Redbull' ? (
               <Redbull />
-            ) : sampleDrink === 'CheletedLemon' ? (
+            ) : Drink === 'CheletedLemon' ? (
               <CheletedLemon />
             ) : (
               <div />
             ),
           )}
         </Container>
+        <ModalContext.Provider
+          value={{
+            isModalOpen: isPostModalOpen,
+            setIsModalOpen: setIsPostModalOpen,
+          }}
+        >
+          {isPostModalOpen && <PostModal />}
+        </ModalContext.Provider>
       </Body>
     </div>
   )
