@@ -153,7 +153,6 @@ export const PostModal = () => {
                 type="file"
                 name="energy drink"
                 onChange={(event) => {
-                  const data = new FormData()
                   const header = {
                     headers: {
                       'Prediction-Key': '73e1471c984c46fe8bcbe1ab3c8be241',
@@ -186,7 +185,7 @@ export const PostModal = () => {
             }}
           ></Cancel>
         </AddButtonSpace>
-        
+
         {/* TODO: 投稿した写真をPreviewのsrc要素の中に入れる */}
         <Preview src="" />
         <Description>あなたが飲んだのは{suggestedDrink}ですか？</Description>

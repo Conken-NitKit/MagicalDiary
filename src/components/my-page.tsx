@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from './header&dorwer/header'
 import styled from 'styled-components'
-import AddIcon from '@material-ui/icons/Add'
 import Redbull from '../items/RedBull'
 import Zone from '../items/Zone'
 import MonsterEnegy from '../items/MonsterEnegy'
@@ -19,11 +18,6 @@ const UserName = styled.p`
   margin: 0;
   padding-top: 140px;
   font-family: 'M PLUS Rounded 1c';
-  color: #101841;
-`
-
-const AddButton = styled(AddIcon)`
-  margin-left: 80vw;
   color: #101841;
 `
 
