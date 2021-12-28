@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from './header&dorwer/header'
 import styled from 'styled-components'
-import AddIcon from '@material-ui/icons/Add'
 import Redbull from '../items/RedBull'
 import Zone from '../items/Zone'
 import MonsterEnegy from '../items/MonsterEnegy'
