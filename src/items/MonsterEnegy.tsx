@@ -28,7 +28,7 @@ const TopSurface = styled.div`
   margin-top: -16.18%;
 `
 
-const Down_surface = styled.div`
+const DownSurface = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,7 +76,7 @@ const MonsterEnegy = () => {
             <MonsterLine />
           </MonsterLineSpace>
         </Side>
-        <Down_surface />
+        <DownSurface />
       </Outline>
     </Container>
   )
