@@ -22,11 +22,6 @@ const UserName = styled.p`
   color: #101841;
 `
 
-const AddButton = styled(AddIcon)`
-  margin-left: 80vw;
-  color: #101841;
-`
-
 const Since = styled.p`
   text-align: center;
   margin-top: 5px;
